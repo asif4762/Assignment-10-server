@@ -1,0 +1,81 @@
+[
+    {
+      "imageURL": "https://i.ytimg.com/vi/P8hMcK0tQ7A/maxresdefault.jpg",
+      "item_name": "Wooden Chair",
+      "subcategory_Name": "Wooden Furniture & Sculptures",
+      "shortdescription": "Handcrafted wooden chair made from sustainable wood, perfect for adding rustic charm to any space.",
+      "price": 100.00,
+      "rating": 4.5,
+      "customization_example": "yes",
+      "processing_time": "2-3 weeks",
+      "stockStatus": "Made to Order",
+      "User_Email": "example@example.com",
+      "User_Name": "John Doe"
+    },
+    {
+      "imageURL": "https://cdn.shopify.com/s/files/1/0238/9183/files/MRKATE_WMA_SHEZEN-36.jpg",
+      "item_name": "Jute Wall Hanging",
+      "subcategory_Name": "Jute Home Decor",
+      "shortdescription": "Beautiful jute wall hanging featuring intricate macrame design, ideal for adding texture to your home decor.",
+      "price": 35.00,
+      "rating": 4.8,
+      "customization_example": "no",
+      "processing_time": "In stock",
+      "stockStatus": "In stock",
+      "User_Email": "example2@example.com",
+      "User_Name": "Jane Smith"
+    },
+    {
+      "imageURL": "https://rainforestbowls.com/cdn/shop/collections/salad-serving-bowls.jpg?v=1677009696",
+      "item_name": "Wooden Salad Bowl Set",
+      "subcategory_Name": "Wooden Utensils and Kitchenware",
+      "shortdescription": "Set of handcrafted wooden salad bowls made from sustainable wood, perfect for serving salads and snacks.",
+      "price": 45.00,
+      "rating": 4.7,
+      "customization_example": "yes",
+      "processing_time": "1-2 weeks",
+      "stockStatus": "Made to Order",
+      "User_Email": "example3@example.com",
+      "User_Name": "Sarah Johnson"
+    },
+    {
+      "imageURL": "https://m.media-amazon.com/images/I/91-QjT5UtWL._AC_UF894,1000_QL80_.jpg",
+      "item_name": "Jute Coasters Set",
+      "subcategory_Name": "Jute Kitchenware & Utensils",
+      "shortdescription": "Set of eco-friendly jute coasters, perfect for protecting your table surfaces in style.",
+      "price": 20.00,
+      "rating": 4.6,
+      "customization_example": "no",
+      "processing_time": "In stock",
+      "stockStatus": "In stock",
+      "User_Email": "example4@example.com",
+      "User_Name": "Michael Brown"
+    },
+    {
+      "imageURL": "https://i.etsystatic.com/25535167/r/il/202bfb/2806913267/il_fullxfull.2806913267_iqup.jpg",
+      "item_name": "Wooden Elephant Sculpture",
+      "subcategory_Name": "Wooden Home Decor",
+      "shortdescription": "Hand-carved wooden elephant sculpture, a unique addition to your home decor.",
+      "price": 60.00,
+      "rating": 4.9,
+      "customization_example": "yes",
+      "processing_time": "2-3 weeks",
+      "stockStatus": "Made to Order",
+      "User_Email": "example5@example.com",
+      "User_Name": "Emily Davis"
+    },
+    {
+      "imageURL": "https://m.media-amazon.com/images/I/71Xar6ooNIL._AC_UY1100_.jpg",
+      "item_name": "Jute and Wooden Bracelet",
+      "subcategory_Name": "Jute and wooden jewellery",
+      "shortdescription": "Stylish bracelet made from jute and wooden beads, perfect for adding a natural touch to your outfit.",
+      "price": 15.00,
+      "rating": 4.4,
+      "customization_example": "no",
+      "processing_time": "In stock",
+      "stockStatus": "In stock",
+      "User_Email": "example6@example.com",
+      "User_Name": "David Wilson"
+    }
+  ]
+
