@@ -7,7 +7,9 @@ const fs = require('fs').promises; // Import the 'fs' module to read the file
 const app = express();
 const port = process.env.PORT || 5500;
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173/", "https://assignment-10-5b48d.web.app/"]
+}));
 app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.rurzeff.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
