@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 5500;
 
 app.use(cors({
-  origin: ["http://localhost:5173/", "https://assignment-10-5b48d.web.app/"]
+  origin: ["http://localhost:5173", "https://assignment-10-5b48d.web.app", "https://assignment-10-5b48d.web.app"]
 }));
 app.use(express.json());
 
@@ -24,7 +24,6 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
 
     const AllArtCollection = client.db("AllArtDB").collection("AllArt")
 
