@@ -41,12 +41,13 @@ async function run() {
    })
 
    app.get('/myArts/:User_Email', async (req, res) => {
-    console.log('Email:', req.params.User_Email);
     const result = await AllArtCollection.find({ User_Email: req.params.User_Email }).toArray();
     res.send(result);
   });
   
-  app.put()
+  app.put('/updateProduct/:id', async (req, res) => {
+    console.log(req.params.id)
+  })
 
 app.get('/all-arts/:id', async (req, res) => {
   console.log('id:', req.params.id)
