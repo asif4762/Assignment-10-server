@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const { ObjectId } = require('mongodb'); 
 const fs = require('fs').promises; // Import the 'fs' module to read the file
 const app = express();
 const port = process.env.PORT || 5500;
@@ -22,46 +23,35 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-    const database = client.db("allCartsDB");
-    const allCarts = database.collection("allCarts");
-    // const dataBaseMyArt = client.db("myArt");
-    // const myArt = dataBaseMyArt.collection("myArt");
 
-    const myArtCollection = client.db("myArtDB").collection("myArt")
+    const AllArtCollection = client.db("AllArtDB").collection("AllArt")
 
-    
-    const count = await allCarts.countDocuments();
-    if (count === 0) {
-      
-      const jsonData = await fs.readFile('./data.json', 'utf8');
-      const doc = JSON.parse(jsonData);
 
-      
-      await allCarts.insertMany(doc);
-    }
-
-   app.post('/my-arts', async (req, res) => {
+   app.post('/all-arts', async (req, res) => {
     const art = req.body;
-    console.log('My art', art);
-    const result = await myArtCollection.insertOne(art);
+    console.log('All Art', art);
+    const result = await AllArtCollection.insertOne(art);
     res.send(result);
    })
 
-   app.get('/my-arts', async (req, res) => {
-    const cursor = myArtCollection.find();
+   app.get('/all-arts', async (req, res) => {
+    const cursor = AllArtCollection.find();
     const result = await cursor.toArray();
     res.send(result);
    })
 
-    app.get('/allCarts', async (req, res) => {
-      try {
-        const items = await allCarts.find({}).toArray();
-        res.json(items);
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Internal server error" });
-      }
-    });
+   app.get('/myArts/:User_Email', async (req, res) => {
+    console.log('Email:', req.params.User_Email);
+    const result = await AllArtCollection.find({ User_Email: req.params.User_Email }).toArray();
+    res.send(result);
+  });
+  
+
+app.get('/all-arts/:id', async (req, res) => {
+  console.log('id:', req.params.id)
+  const result = await AllArtCollection.findOne({ _id: new ObjectId(req.params.id) });
+  res.send(result);
+})
 
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
@@ -74,9 +64,9 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-  res.send('BrandShop Server is Running');
+  res.send('Art and Craft Server is Running');
 });
 
 app.listen(port, () => {
-  console.log(`BrandShop Server is Running on port ${port}`);
+  console.log(`Art and Craft Server is Running on port ${port}`);
 });
