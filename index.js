@@ -71,6 +71,20 @@ async function run() {
     res.send(result);
   });
   
+  app.delete('/delete/:id', async (req, res) => {
+    try {
+      const result = await AllArtCollection.deleteOne({ _id: new ObjectId(req.params.id) });
+      if (result.deletedCount === 1) {
+        res.status(200).send({ message: 'Item deleted successfully.' });
+      } else {
+        res.status(404).send({ message: 'Item not found.' });
+      }
+    } catch (error) {
+      console.error('Error deleting item:', error);
+      res.status(500).send({ message: 'Internal server error.' });
+    }
+  });
+  
 
 app.get('/all-arts/:id', async (req, res) => {
   console.log('id:', req.params.id)
