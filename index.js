@@ -46,6 +46,7 @@ async function run() {
     res.send(result);
   });
   
+  app.put()
 
 app.get('/all-arts/:id', async (req, res) => {
   console.log('id:', req.params.id)
