@@ -47,7 +47,30 @@ async function run() {
   
   app.put('/updateProduct/:id', async (req, res) => {
     console.log(req.params.id)
-  })
+    console.log(req.body.item_name)
+  
+    const query = {_id: new ObjectId(req.params.id)};
+    const updateData = {
+      $set: {
+        item_name: req.body.item_name,
+        imageURL: req.body.imageURL,
+        price: req.body.price,
+        shortdescription: req.body.shortdescription,
+        processing_time: req.body.processing_time,
+        subcategory_Name: req.body.subcategory_Name,
+        User_Email: req.body.User_Email,
+        rating: req.body.rating,
+        stockStatus: req.body.stockStatus,
+        User_Name: req.body.User_Name,
+        customization_example: req.body.customization_example
+      }
+    };
+  
+    const result = await AllArtCollection.updateOne(query, updateData);
+    console.log(result);
+    res.send(result);
+  });
+  
 
 app.get('/all-arts/:id', async (req, res) => {
   console.log('id:', req.params.id)
